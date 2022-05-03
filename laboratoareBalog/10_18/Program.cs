@@ -12,7 +12,7 @@ namespace _10_18
             // problema4();
             // problema5();
             // problema6();
-             problema7();
+            // problema7();
             // problema8();
             // problema9();
             // problema10();
@@ -163,8 +163,79 @@ namespace _10_18
             Console.WriteLine($"pu: {pu}"); // ??? 
             Console.WriteLine($"ultima cifra a produsului dintre a & b este: {u}");
 
+        }
+
+
+        private static void problema8() // Suma a trei numere inversate
+        {
+            int a, b, c, s, ua, za, sa, ub, zb, sb, uc, zc, sc, ai, bi, ci;
+
+            Console.WriteLine("Dati 3 numere de 3 cifre");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            c = Convert.ToInt32(Console.ReadLine());
+
+            ua = a % 10; za = (a / 10) % 10; sa = (a / 10) / 10;
+            ub = b % 10; zb = (b / 10) % 10; sb = (b / 10) / 10;
+            uc = c % 10; zc = (c / 10) % 10; sc = (c / 10) / 10;
+
+            ai = 100 * ua + 10 * za + sa;
+            bi = 100 * ub + 10 * zb + sb;
+            ci = 100 * uc + 10 * zc + sc;
+
+            s = ai + bi + ci;
+
+            Console.WriteLine($"Suma numerelor inversate este: {s}");
 
         }
+
+        private static void problema9() // Suma dintre sutele primului numar si zecile al doilea numar
+        {
+            int a, b, sa, za, ua, sb, zb, ub, suma;
+
+            Console.WriteLine("Dati doua numere intregi din trei cifre");
+
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+
+            ua = a % 10;
+            za = (a / 10) % 10;
+            sa = (a / 10) / 10;
+            ub = b % 10;
+            zb = (b / 10) % 10;
+            sb = (b / 10) / 10;
+
+            suma = sa + zb;
+
+            Console.WriteLine($"Suma este: {suma}");
+
+        }
+
+
+        private static void problema10() // Arie & Perimetrul in Trapez
+        {
+            float b1, b2, d, h, p, a;
+
+            Console.WriteLine("Introduceti baza mica");
+            b1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Introduceti baza mare");
+            b2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Introduceti inaltimea");
+            h = float.Parse(Console.ReadLine());
+
+            d = (float)Math.Sqrt(h * h + (b2 - b1) * (b2 - b1));  // conv rez in float pentru ca rez e double
+            p = b1 + b2 + d + h;
+            a = (b1 + b2) * h / 2;
+
+
+            Console.WriteLine($"Perimetrul este: {p}");
+            Console.WriteLine($"Aria este: {a}");
+
+        }
+
+
 
     }
 }
